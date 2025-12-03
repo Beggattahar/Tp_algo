@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+
 typedef struct Product{
 	int ID ;
 	char Nome[20];
@@ -14,6 +15,7 @@ typedef struct Node{
 Node* createList(){
 	return NULL;
 }
+
 int empty(Node* head){
 	if(head == NULL){
 		return 0;
@@ -53,7 +55,7 @@ void insertFirst(Product x ,Node**head ){
 	*head = list ;
 	tum->next = list ;
 }
-void display(Node* head){
+void printList(Node* head){
 	if(head == NULL){
 	    printf("List is empty \n");
     	return;
@@ -67,6 +69,13 @@ void display(Node* head){
 
 int main(){
 	Node*head = NULL ;
+	
+	if(empty(head) == 0){
+		printf("List is empty \n");
+	}else{
+		printf("List is not empty \n");
+	}
+	
 	Product P1={1,"Milk",450};
 	Product P2={2,"Eggs",600};
 	Product P3={3,"Sugar",90};
@@ -76,7 +85,14 @@ int main(){
 	insertFirst(P4, &head);
 	insertLast(P2, &head);
 	insertFirst(P3, &head);
+
+
+	printList(head);
 	
-	display(head);
-	
+	if(empty(head) == 0){
+		printf("List is empty \n");
+	}else{
+		printf("List is not empty \n");
+	}
+	return 0;
 }
